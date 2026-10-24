@@ -7,10 +7,18 @@ import 'core/storage/session_storage.dart';
 import 'data/repositories/auth_repository.dart';
 import 'data/repositories/dashboard_repository.dart';
 import 'data/repositories/department_repository.dart';
+import 'data/repositories/instrument_repository.dart';
+import 'data/repositories/machine_repository.dart';
+import 'data/repositories/mail_repository.dart';
+import 'data/repositories/make_repository.dart';
 import 'data/repositories/permission_repository.dart';
 import 'providers/auth_provider.dart';
 import 'providers/dashboard_provider.dart';
 import 'providers/department_provider.dart';
+import 'providers/instrument_provider.dart';
+import 'providers/machine_provider.dart';
+import 'providers/mail_provider.dart';
+import 'providers/make_provider.dart';
 import 'providers/permission_provider.dart';
 
 void main() {
@@ -23,6 +31,10 @@ void main() {
   final permissionRepository = PermissionRepository(apiClient);
   final dashboardRepository = DashboardRepository(apiClient);
   final departmentRepository = DepartmentRepository(apiClient);
+  final machineRepository = MachineRepository(apiClient);
+  final instrumentRepository = InstrumentRepository(apiClient);
+  final makeRepository = MakeRepository(apiClient);
+  final mailRepository = MailRepository(apiClient);
 
   runApp(
     MultiProvider(
@@ -38,6 +50,18 @@ void main() {
         ),
         ChangeNotifierProvider(
           create: (_) => DepartmentProvider(departmentRepository),
+        ),
+        ChangeNotifierProvider(
+          create: (_) => MachineProvider(machineRepository),
+        ),
+        ChangeNotifierProvider(
+          create: (_) => InstrumentProvider(instrumentRepository),
+        ),
+        ChangeNotifierProvider(
+          create: (_) => MakeProvider(makeRepository),
+        ),
+        ChangeNotifierProvider(
+          create: (_) => MailProvider(mailRepository),
         ),
       ],
       child: const App(),

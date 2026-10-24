@@ -11,6 +11,10 @@ import '../../widgets/error_banner.dart';
 import '../../widgets/primary_button.dart';
 import '../../widgets/stat_card.dart';
 import '../department/department_screen.dart';
+import '../machine/machine_screen.dart';
+import '../instrument/instrument_screen.dart';
+import '../make/make_screen.dart';
+import '../mail/mail_screen.dart';
 
 /// One module tile. It shows only if the user has [permission]
 /// (names are the same ones the React app checks with hasPermission).
@@ -31,12 +35,12 @@ final _modules = [
   _Module('View Report', 'Reports', Icons.bar_chart_rounded),
   _Module('View Traceability', 'Traceability', Icons.account_tree_outlined),
   _Module('View NABL', 'NABL', Icons.workspace_premium_outlined),
-  _Module('View Instrument', 'Instruments', Icons.precision_manufacturing_outlined),
+  _Module('View Instrument', 'Instruments', Icons.precision_manufacturing_outlined, screenBuilder: () => const InstrumentScreen(),),
   _Module('View Instrument Configuration', 'Config', Icons.tune),
-  _Module('View Machine', 'Machines', Icons.settings_outlined),
+  _Module('View Machine', 'Machines', Icons.settings_outlined, screenBuilder: () => const MachineScreen(),),
   _Module('View Department', 'Departments', Icons.apartment_outlined, screenBuilder: () => const DepartmentScreen(),),
-  _Module('View Make', 'Make', Icons.label_outline),
-  _Module('View Mail', 'Mail', Icons.mail_outline),
+  _Module('View Make', 'Make', Icons.label_outline, screenBuilder: () => const MakeScreen(),),
+  _Module('View Mail', 'Mail', Icons.mail_outline, screenBuilder: () => const MailScreen(),),
 ];
 
 class DashboardScreen extends StatefulWidget {

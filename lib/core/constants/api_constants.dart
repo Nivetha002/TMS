@@ -22,5 +22,28 @@ class ApiConstants {
   static const String departmentUpdateEndpoint = '/Department/update';
   static const String departmentDeleteEndpoint = '/Department/delete';
 
+  // Machine module (the id is added at the end for update and delete)
+  static const String machineListEndpoint = '/Machine/get-allMachine';
+  static const String machineAddEndpoint = '/Machine/add-machine';
+  static const String machineUpdateEndpoint = '/Machine/update-machine';
+  static const String machineDeleteEndpoint = '/Machine/delete-machine';
   static const Duration requestTimeout = Duration(seconds: 15);
+
+  // Instrument module (the id is added at the end for update and delete)
+  static const String instrumentListEndpoint = '/Instrument/get-allInstrument';
+  static const String instrumentAddEndpoint = '/Instrument/add-instrument';
+  static const String instrumentUpdateEndpoint = '/Instrument/update';
+  static const String instrumentDeleteEndpoint = '/Instrument/delete';
+
+  // Make module (the id is added at the end for update and delete)
+  static const String makeListEndpoint = '/MakeMaster/get-allmake';
+  static const String makeAddEndpoint = '/MakeMaster/add-make';
+  static const String makeUpdateEndpoint = '/MakeMaster/update';
+  static const String makeDeleteEndpoint = '/MakeMaster/delete';
+
+  // Mail module (the id is added at the end for update and delete)
+  static const String mailListEndpoint = '/Mail/get-allmail';
+  static const String mailAddEndpoint = '/Mail/add-mail';
+  static const String mailUpdateEndpoint = '/Mail/update-mail';
+  static const String mailDeleteEndpoint = '/Mail/delete-mail';
 }

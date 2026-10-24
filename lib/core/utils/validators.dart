@@ -28,4 +28,19 @@ class Validators {
     }
     return null;
   }
+
+    // Same pattern the backend uses, so we never send an email it will reject.
+  static final RegExp _emailPattern =
+      RegExp(r'^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$');
+
+  static String? email(String? value) {
+    if (value == null || value.trim().isEmpty) {
+      return 'Email is required';
+    }
+    if (!_emailPattern.hasMatch(value.trim())) {
+      return 'Enter a valid email address';
+    }
+    return null;
+  }
+  
 }
